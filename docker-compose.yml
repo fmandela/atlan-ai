@@ -9,6 +9,9 @@ services:
     # command: uvicorn src.app:app --reload --workers 1 --host 0.0.0.0 --port 3000
     networks:
       - network
+
+    volumes:
+      - ./src:/src
 networks:
   # Declare our private network.  We must declare one for the magic
   # Docker DNS to work, but otherwise its default settings are fine.
