@@ -1,7 +1,7 @@
 build:
   docker:
-    atlan-ai: Dockerfile
+    api: Dockerfile
 
 
 run: 
-  atlan-ai: uvicorn src.main:app --host 0.0.0.0 --port=3000
+  api: uvicorn src.main:app --host 0.0.0.0 --port=3000
