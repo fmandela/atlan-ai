@@ -15,7 +15,7 @@ app.add_middleware(
     allow_headers=['*']
 )
 
-@app.get("/", tags=["Root"])
+@app.get("/", tags=["Index"])
 async def index():
     return {"message": "Welcome to Atlas API"}
 
