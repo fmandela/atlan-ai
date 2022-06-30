@@ -2,4 +2,4 @@ build:
   docker:
     api: Dockerfile
 run: 
-  api: uvicorn src.main:app --host localhost --port=${PORT:-3000}
+  web: uvicorn src.main:app --host localhost --port=${PORT:-3000}
