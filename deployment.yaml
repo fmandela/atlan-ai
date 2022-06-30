@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: atlas-api
+  name: atlan-ai
 spec:
   selector:
-    app: atlas-api
+    app: atlan-ai
   ports:
     - protocol: "TCP"
       port: 3000
@@ -15,23 +15,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: atlas-api
+  name: atlan-ai
 spec:
   selector:
     matchLabels:
-      app: atlas-api
-  replicas: 5
+      app: atlan-ai
+  replicas: 1
   template:
     metadata:
       labels:
-        app: atlas-api
+        app: atlan-ai
     spec:
       containers:
-        - name: atlas-api
-          image: atlas-api
-          imagePullPolicy: Never
+        - name: atlan-ai
+          image: fmandela/atlan-ai
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
           resources:
-          requests:
-            cpu: "200m"
