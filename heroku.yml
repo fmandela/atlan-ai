@@ -1,17 +1,17 @@
 setup:
-  addons:
-  config:
+  addons: ""
+  config: ""
 
 build:
   docker:
     atlan-api: Dockerfile
-  config:
+  config: ""
 
 release:
   command:
-    - ./start.sh
+    - "./start.sh"
   image: api
 run:
   atlan-api:
-    command: ././start.sh
+    command: "./start.sh"
     image: atlan-api
