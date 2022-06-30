@@ -6,7 +6,7 @@ build:
 release:
   command:
     - "./start.sh"
-  image: api
+  image: atlan-api
 run:
   atlan-api:
     command: 
