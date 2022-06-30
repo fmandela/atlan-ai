@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware 
 
-from .db.connect import connect
-
+# from .db.connect import connect
+#
 load_dotenv()
 
 app = FastAPI()
@@ -21,7 +21,7 @@ app.add_middleware(
     allow_headers=['*']
 )
 
-connect()
+# connect()
 
 
 @app.get("/", tags=["Index"])

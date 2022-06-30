@@ -9,7 +9,8 @@ WORKDIR /app/atlan-ai
 
 COPY . .
 
-COPY .env .
+# COPY .env .
+
 RUN apk update && apk add python3-dev \ 
     gcc \ 
     libc-dev \
