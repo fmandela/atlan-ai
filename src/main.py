@@ -1,7 +1,13 @@
 import uvicorn 
+import os 
+from dotenv import load_dotenv
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware 
+
+# from .db.connect import connect
+#
+load_dotenv()
 
 app = FastAPI()
 
@@ -15,14 +21,25 @@ app.add_middleware(
     allow_headers=['*']
 )
 
-@app.get("/", tags=["Root"])
+# connect()
+
+
+@app.get("/", tags=["Index"])
 async def index():
-    return {"message": "Welcome to Atlas API"}
+    return {"message": "Atlan AI"}
 
 @app.get("/api/intro", tags=["Intro"])
 async def intro():
-    return {"message": "I am Mandela"}
+    return {"message": "Welcome to Atlan"}
 
+@app.get("/api/lana", tags=["Lana"])
+async def lana():
+    return {"message": "Hello, I'm Lana ..."}
+
+@app.get("/api/wadau", tags=["Wadau", "Chama"])
+async def wadau():
+    return {"message": "Welcome to Wadau: Your pathway to Posperity"}
 # if __name__ == "__main__":
+#     print("Hello ")
 #     print("Starting app...")
 #     uvicorn.run("app:app", host="0.0.0.0", port=3000, reload=True)
