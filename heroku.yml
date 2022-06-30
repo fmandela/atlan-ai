@@ -2,7 +2,6 @@
 build:
   docker:
     atlan-api: Dockerfile
-  config: ""
 
 release:
   command:
