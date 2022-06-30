@@ -1,5 +1,17 @@
+setup:
+  addons:
+  config:
+
 build:
   docker:
-    api: Dockerfile
-run: 
-  web: uvicorn src.main:app --host localhost --port=${PORT:-3000}
+    atlan-api: Dockerfile
+  config:
+
+release:
+  command:
+    - ./start.sh
+  image: api
+run:
+  atlan-api:
+    command: ././start.sh
+    image: atlan-api
